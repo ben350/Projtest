@@ -7,14 +7,14 @@ Rails.application.routes.draw do
   resources :movies, only: [:show, :index]
   resources :items, only: [:show, :index]
   resource :cart, only: [:show] do
-    put 'add/:movie_id', to: 'carts#add', as: :add_to
-    put 'remove/:movie_id', to: 'carts#remove', as: :remove_from
+    put 'add/:item_id', to: 'carts#add', as: :add_to
+    put 'remove/:item_id', to: 'carts#remove', as: :remove_from
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'movies#index'
+  root 'items#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
