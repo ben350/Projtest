@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @item.name %>
-</p>
-
-<p>
+<ul>
+<li>
+  <strong><%= @item.name %></strong>
+  <p></p>
   <strong>Price:</strong>
-  <%= @item.price %>
-</p>
+  $<%= @item.price %>
+</li>
+</ul>
+
+
 
 <%if signed_in?%>
     <%=link_to "", class: "button", data: {target: @cart_action, addUrl: add_to_cart_path(@item), removeUrl: remove_from_cart_path(@item)} do%>

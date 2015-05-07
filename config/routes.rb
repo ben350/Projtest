@@ -4,12 +4,15 @@ Rails.application.routes.draw do
   get 'home/index'
 
   get 'carts/show'
+  get 'categories/index'
 
   get '/contact', to: 'home#contact'
+  get '/hours', to: 'home#hours'
 
   devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
   
   resources :items, only: [:show, :index]
+  resources :categories, only: [:show, :index]
   resource :cart, only: [:show] do
     put 'add/:item_id', to: 'carts#add', as: :add_to
     put 'remove/:item_id', to: 'carts#remove', as: :remove_from
