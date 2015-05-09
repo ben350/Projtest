@@ -1,28 +1,39 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+IMPORTANT NOTES TO RUN WEB APPLICATION
 
 Things you may want to cover:
 
 * Ruby version
 
+	4.1.1
+
 * System dependencies
+
+IMPORTANT:
+ Install redis-server link: http://redis.io/
+ (if you have brew installed on mac, just do 'brew install redis')
+ and run it before running rails server
 
 * Configuration
 
-* Database creation
+run bundle install
 
-* Database initialization
+* Database 
+
+this database requires:
+
+rake db:create
+rake db:migrate
+rake db:seed
+- we have our database elements present in the seed file, so running 'rake db:seed' should create all the required elements
 
 * How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+	To run the application, after creating the databases:
 
-* Deployment instructions
+	-FIRST, install redis server, and run 'redis-server' in a seperate terminal window
+	-simply run 'rails server' to start the application on localhost:3000
 
-* ...
 
-
-Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
